@@ -1,16 +1,16 @@
 {
-	"name": "unocss-preset-daisy",
-	"version": "8.0.0",
-	"description": "UnoCSS preset for daisyUI",
+	"name": "@matthiesenxyz/unocss-preset-daisyui",
+	"version": "0.1.0",
+	"description": "UnoCSS preset for daisyUI based on kidonng/unocss-preset-daisy",
 	"scripts": {
 		"build": "vite build demo",
 		"prepare": "tsc",
 		"preview": "vite preview demo --host",
 		"start": "vite demo --host"
 	},
-	"repository": "kidonng/unocss-preset-daisy",
+	"repository": "@matthiesenxyz/unocss-preset-daisyui",
 	"license": "MIT",
-	"author": "Kid <hi@xuann.wang> (https://xuann.wang/)",
+	"author": "Adam Matthiesen <https://matthiesen.xyz>",
 	"type": "module",
 	"exports": "./index.js",
 	"files": [
@@ -25,14 +25,14 @@
 		"postcss-js": "^4.0.1"
 	},
 	"peerDependencies": {
-		"daisyui": "^4.10.5",
-		"unocss": "^0.59.4"
+		"daisyui": "^4.12.2",
+		"unocss": "^0.61.0"
 	},
 	"devDependencies": {
 		"@iconify-json/octicon": "^1.1.54",
 		"@sindresorhus/tsconfig": "^5.0.0",
-		"@types/postcss-js": "^4.0.1",
-		"@unocss/reset": "^0.59.4",
+		"@types/postcss-js": "^4.0.4",
+		"@unocss/reset": "^0.61.0",
 		"typescript": "^5.4.5",
 		"vite": "^5.2.11",
 		"xo": "^0.58.0"
