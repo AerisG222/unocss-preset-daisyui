@@ -7,7 +7,7 @@
 ## Installation
 
 ```sh
-npm install unocss daisyui unocss-preset-daisy
+npm install unocss daisyui @mattheisenxyz/unocss-preset-daisyui
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install unocss daisyui unocss-preset-daisy
 import {defineConfig} from 'vite'
 import unocss from 'unocss/vite'
 import {presetUno} from 'unocss'
-import {presetDaisy} from 'unocss-preset-daisy'
+import {presetDaisy} from '@mattheisenxyz/unocss-preset-daisyui'
 
 export default defineConfig({
 	plugins: [
@@ -42,7 +42,7 @@ import 'uno.css'
 import {defineConfig} from 'astro/config'
 import unocss from 'unocss/astro'
 import {presetUno} from 'unocss'
-import {presetDaisy} from 'unocss-preset-daisy'
+import {presetDaisy} from '@mattheisenxyz/unocss-preset-daisyui'
 
 export default defineConfig({
 	integrations: [
@@ -61,7 +61,7 @@ To use UnoCSS with Nuxt, `@unocss/nuxt` must be installed as well.
 ```js
 import {defineNuxtConfig} from 'nuxt/config'
 import {presetUno} from 'unocss'
-import {presetDaisy} from 'unocss-preset-daisy'
+import {presetDaisy} from '@mattheisenxyz/unocss-preset-daisyui'
 
 export default defineNuxtConfig({
 	modules: ['@unocss/nuxt'],
