@@ -26,15 +26,15 @@
 	},
 	"peerDependencies": {
 		"daisyui": "^4.12.10",
-		"unocss": "^0.61.5"
+		"unocss": "^0.62.3"
 	},
 	"devDependencies": {
-		"@iconify-json/octicon": "^1.1.56",
+		"@iconify-json/octicon": "^1.1.57",
 		"@sindresorhus/tsconfig": "^5.0.0",
 		"@types/postcss-js": "^4.0.4",
-		"@unocss/reset": "^0.61.5",
+		"@unocss/reset": "^0.62.3",
 		"typescript": "^5.5.4",
-		"vite": "^5.3.3",
+		"vite": "^5.4.2",
 		"xo": "^0.58.0"
 	}
 }
