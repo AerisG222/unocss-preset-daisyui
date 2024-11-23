@@ -1,16 +1,16 @@
 {
-	"name": "@matthiesenxyz/unocss-preset-daisyui",
-	"version": "0.1.2",
-	"description": "UnoCSS preset for daisyUI based on kidonng/unocss-preset-daisy",
+	"name": "@aerisg222/unocss-preset-daisyui",
+	"version": "0.1.0",
+	"description": "UnoCSS preset for daisyUI based on matthiesenxyz/unocss-preset-daisy",
 	"scripts": {
 		"build": "vite build demo",
 		"prepare": "tsc",
 		"preview": "vite preview demo --host",
 		"start": "vite demo --host"
 	},
-	"repository": "@matthiesenxyz/unocss-preset-daisyui",
+	"repository": "@aerisg222/unocss-preset-daisyui",
 	"license": "MIT",
-	"author": "Adam Matthiesen <https://matthiesen.xyz>",
+	"author": "Mike Morano <https://www.mikeandwan.us>",
 	"type": "module",
 	"exports": "./index.js",
 	"files": [
