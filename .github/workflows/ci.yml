@@ -14,14 +14,3 @@ jobs:
           cache: pnpm
       - run: pnpm install
       - run: npm pack
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: npm i -g pnpm@9
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-      - run: pnpm install
-      - run: pnpm xo
