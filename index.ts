@@ -93,7 +93,6 @@ export const presetDaisy = (
 				// Skip prefixes
 				: (tokens[2] as ClassToken).name
 		} else if (token.type === 'type') {
-			console.log(tokens);
 			// default base to what is likely most specific class by finding the last one in the list
 			// input.tab:checked + .tab-content, :is(.tab-active, [aria-selected="true"]) + .tab-content -> .tab-content
 			for (var i = tokens.length - 1; i >= 0; i--) {
@@ -111,7 +110,6 @@ export const presetDaisy = (
 
 					if(hasToken.argument) {
 						base = (tokenize(hasToken.argument!)[0] as ClassToken).name;
-						console.log(base);
 					}
 				}
 			}
