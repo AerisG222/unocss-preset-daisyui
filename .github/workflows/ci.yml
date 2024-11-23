@@ -10,7 +10,7 @@ jobs:
       - run: npm i -g pnpm@8
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
       - run: pnpm install
       - run: npm pack
@@ -21,7 +21,7 @@ jobs:
       - run: npm i -g pnpm@8
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           cache: pnpm
       - run: pnpm install
       - run: pnpm xo
