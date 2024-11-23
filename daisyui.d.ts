@@ -25,7 +25,6 @@ declare module 'daisyui/dist/unstyled.js' {
 	export default unstyled
 }
 
-
 declare module 'daisyui/dist/styled.js' {
 	import type {CssInJs} from 'postcss-js'
 
@@ -53,10 +52,10 @@ declare module 'daisyui/src/theming/themes.js' {
 }
 
 declare module 'daisyui/src/lib/utility-classes.js' {
-  import type { CssInJs } from 'postcss-js'
+	import type {CssInJs} from 'postcss-js'
 
-  const utilityClasses: CssInJs
-  export default utilityClassess
+	const utilityClasses: CssInJs
+	export default utilityClassess
 }
 
 declare module 'daisyui/src/theming/functions.js' {

@@ -13,10 +13,10 @@ import utilitiesUnstyled from 'daisyui/dist/utilities-unstyled.js'
 import utilitiesStyled from 'daisyui/dist/utilities-styled.js'
 import themes from 'daisyui/src/theming/themes.js'
 import colorFunctions from 'daisyui/src/theming/functions.js'
-import utilityClasses from 'daisyui/src/lib/utility-classes.js';
+import utilityClasses from 'daisyui/src/lib/utility-classes.js'
+
 const processor = postcss(autoprefixer)
 const process = (object: CssInJs) => processor.process(object, {parser: parse})
-
 const replacePrefix = (css: string) => css.replaceAll('--tw-', '--un-')
 
 const defaultOptions = {
@@ -38,7 +38,7 @@ export const presetDaisy = (
 	const rules = new Map<string, string>()
 	const specialRules: Record<string, string[]> = {
 		keyframes: [],
-		supports: []
+		supports: [],
 	};
 	const nodes: Rule[] = []
 
