@@ -1,6 +1,6 @@
 {
 	"name": "@aerisg222/unocss-preset-daisyui",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "UnoCSS preset for daisyUI based on matthiesenxyz/unocss-preset-daisy",
 	"scripts": {
 		"build": "vite build demo",
