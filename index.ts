@@ -1,7 +1,7 @@
 import postcss, {type Rule, type ChildNode} from 'postcss'
 import autoprefixer from 'autoprefixer'
 import {parse, type CssInJs} from 'postcss-js'
-import {tokenize, type ClassToken, type PseudoClassToken} from 'parsel-js'
+import {stringify, tokenize, type ClassToken, type PseudoClassToken} from 'parsel-js'
 import type {Preset, DynamicRule, Preflight} from 'unocss'
 import camelCase from 'camelcase'
 import colors from 'daisyui/src/theming/index.js'
@@ -28,6 +28,7 @@ const defaultOptions = {
 	utils: true,
 	rtl: false,
 	darkTheme: 'dark',
+	prefix: ''
 }
 
 export const presetDaisy = (
@@ -49,9 +50,29 @@ export const presetDaisy = (
 		styles.push(utilities, utilitiesUnstyled, utilitiesStyled)
 	}
 
+	const applyPrefix = (selector: string) => {
+		if (options.prefix === '') {
+			return selector;
+		}
+		var tokens = tokenize(selector);
+
+		for (var token of tokens) {
+			if(token.type === 'class') {
+				token.name = `${options.prefix}${token.name}`;
+				token.content = `.${token.name}`;
+			} else if(token.type === 'pseudo-class' && token.argument) {
+				token.argument = applyPrefix(token.argument);
+				token.content = `:${token.name}(${token.argument})`;
+			}
+		}
+
+		return stringify(tokens);
+	};
+
 	const categorizeRules = (node: ChildNode) => {
 		if (node.type === 'rule') {
-				nodes.push(node);
+			node.selector = applyPrefix(node.selector);
+			nodes.push(node);
 		} else if(node.type === 'atrule') {
 			if(Array.isArray(specialRules[node.name])) {
 				specialRules[node.name]!.push(String(node));
@@ -76,10 +97,10 @@ export const presetDaisy = (
 		if (token.type === 'class') {
 			// Resolve conflicts with @unocss/preset-wind link variant
 			// .link-* -> .link
-			if (selector.startsWith('.link-')) {
-				base = 'link'
-			} else if (selector.startsWith('.modal-open')) {
-				base = 'modal'
+			if (selector.startsWith(`.${options.prefix}link-`)) {
+				base = `.${options.prefix}link`
+			} else if (selector.startsWith(`.${options.prefix}modal-open`)) {
+				base = `${options.prefix}modal`
 			} else {
 				base = token.name
 			}
@@ -88,8 +109,8 @@ export const presetDaisy = (
 			base = (tokenize(token.argument!)[0] as ClassToken).name
 		} else if (['[dir="rtl"]', ':root'].includes(token.content)) {
 			// Special case for https://github.com/saadeghi/daisyui/blob/6db14181733915278621d9b2d128b0af43c52323/src/components/unstyled/modal.css#LL28C1-L28C89
-			base = tokens[1]!.content.includes('.modal-open')
-				? 'modal'
+			base = tokens[1]!.content.includes(`.${options.prefix}modal-open`)
+				? `${options.prefix}modal`
 				// Skip prefixes
 				: (tokens[2] as ClassToken).name
 		} else if (token.type === 'type') {

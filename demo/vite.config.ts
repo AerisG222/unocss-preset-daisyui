@@ -6,6 +6,7 @@ import {presetDaisy} from '../index.js'
 export default defineConfig({
 	plugins: [
 		unocss({
+			//presets: [presetUno({prefix: 'abc-'}), presetDaisy({prefix: 'xyz-'}), presetIcons()],
 			presets: [presetUno(), presetDaisy(), presetIcons()],
 		}),
 	],
