@@ -1,5 +1,11 @@
 # unocss-preset-daisy
 
+
+****
+Please note: I have archived this repo as I am no longer using this package after coming across this package: [unocss-preset-daisy](https://github.com/ameinhardt/unocss-preset-daisy).
+****
+
+
 > [UnoCSS](https://github.com/unocss/unocss) preset for [daisyUI](https://github.com/saadeghi/daisyui)
 
 [Checkout the demo!](https://unocss-preset-daisy.vercel.app/)
